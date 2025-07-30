@@ -341,7 +341,7 @@ function AdminDashboard() {
                           )}
                         </div>
                       </div>
-                      <div className="flex space-x-2">
+                      <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                         <AppointmentActionButton
                           onClick={() =>
                             handleAppointmentStatusUpdate(

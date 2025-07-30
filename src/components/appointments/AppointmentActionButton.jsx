@@ -1,27 +1,27 @@
 import { useState } from "react";
 import LoadingSpinner from "../ui/LoadingSpinner";
 
-const AppointmentActionButton = ({ 
-  onClick, 
-  children, 
-  variant = "primary", 
+const AppointmentActionButton = ({
+  onClick,
+  children,
+  variant = "primary",
   disabled = false,
   className = "",
-  size = "sm"
+  size = "sm",
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const variants = {
     primary: "bg-green-600 hover:bg-green-700 text-white",
     danger: "bg-red-600 hover:bg-red-700 text-white",
-    secondary: "bg-gray-600 hover:bg-gray-700 text-white"
+    secondary: "bg-gray-600 hover:bg-gray-700 text-white",
   };
 
   const sizes = {
     xs: "px-2 py-1 text-xs",
     sm: "px-3 py-1 text-xs",
     md: "px-4 py-2 text-sm",
-    lg: "px-6 py-3 text-base"
+    lg: "px-6 py-3 text-base",
   };
 
   const handleClick = async () => {
@@ -31,7 +31,7 @@ const AppointmentActionButton = ({
     try {
       await onClick();
     } catch (error) {
-      console.error('Action failed:', error);
+      console.error("Action failed:", error);
     } finally {
       setIsLoading(false);
     }
@@ -59,4 +59,4 @@ const AppointmentActionButton = ({
   );
 };
 
-export default AppointmentActionButton; 
+export default AppointmentActionButton;
